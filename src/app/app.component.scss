@@ -66,8 +66,10 @@
     display: flex;
     padding: 25px;
     gap: 10px;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
 }
+
+
 
 .posts li {
     list-style: none;
@@ -119,7 +121,8 @@ h3 {
 }
 
 .button-46:hover {
-  background-color: #FFFFFF;
+  background-color: #333030;
+  color:rgb(250, 246, 246);
   border-color: rgba(0, 0, 0, 0.19);
 }
 
@@ -156,6 +159,39 @@ h3 {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 840px) {
+    .container {
+        width: 600px;
+        margin: 40px auto;
+        background-color: #ffffff;
+
+    }
+    .input-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color:#9ceaef;
+        height: 200px;
+        margin: 0 auto;
+        width: 600px;
+    }
+
+    .box:hover input {
+        width: 400px;
+    }
+
+    .button-46 {
+        font-size: 16px;
+        min-width: 150px;
+        padding: 14px 16px;
+      }
+
+     
+
+
+    .names li {
+        width: 200px;
+    }
+    
 
 }
