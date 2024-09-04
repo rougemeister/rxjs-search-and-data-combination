@@ -1,0 +1,45 @@
+<div class="container">
+  <input 
+    type="text" 
+    placeholder="Search by Username..." 
+    (input)="onSearch($event)" 
+    (focus)="onFocus()" 
+    (blur)="onBlur()" 
+  />
+  
+  @if (isLoading) {
+    <div>Loading...</div>
+  }
+  
+  @if (searchResults && searchResults.length) {
+    <ul>
+      @for (result of searchResults; track result) {
+        <li (click)="loadUserData(result)" style="cursor: pointer;">
+          {{ result }}
+        </li>
+      }
+    </ul>
+  }
+
+  @if (searchResults && searchResults.length === 0 && !isLoading) {
+    <div>No users found.</div>
+  }
+
+  @if (combinedData) {
+    <div>
+      <h3>{{ combinedData.userDetails }}</h3>
+      <h4>User Posts:</h4>
+      <ul>
+        @for (post of combinedData.userPosts; track post) {
+          <li>{{ post }}</li>
+        }
+      </ul>
+    </div>
+  }
+
+  @if (!searchResults && !combinedData && !isLoading) {
+    <div>
+      <p>No data to display. Start a search!</p>
+    </div>
+  }
+</div>
