@@ -39,7 +39,7 @@ export class ApiService {
   // Combine user details and posts
   combineApiData(userId: number): Observable<{ userDetails: string; userPosts: string[] }> {
     const userDetails$ = this.http.get<any>(`${this.userApiUrl}/${userId}`).pipe(
-      map(user => `User Details: ${user.name}`),
+      map(user => `${user.name}`),
       catchError(() => of('Error fetching user details'))
     );
 
